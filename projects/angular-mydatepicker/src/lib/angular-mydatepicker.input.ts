@@ -43,6 +43,8 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
   @Input() options: IMyOptions;
   @Input() locale: string;
   @Input() defaultMonth: string;
+  @Input() showYearSelection: boolean = true;
+  @Input() showMonthSelection: boolean = true;
 
   @Output() dateChanged: EventEmitter<IMyDateModel> = new EventEmitter<IMyDateModel>();
   @Output() inputFieldChanged: EventEmitter<IMyInputFieldChanged> = new EventEmitter<IMyInputFieldChanged>();
@@ -350,6 +352,8 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
       this.cRef.instance.initializeComponent(
         this.opts,
         this.defaultMonth,
+        this.showMonthSelection,
+        this.showYearSelection,
         this.selectedValue,
         this.getHostValue(),
         this.getSelectorPosition(this.elem.nativeElement),

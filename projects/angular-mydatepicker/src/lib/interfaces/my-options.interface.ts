@@ -61,6 +61,8 @@ export interface IMyOptions {
   divHostElement?: IMyDivHostElement;
   ariaLabelPrevMonth?: string;
   ariaLabelNextMonth?: string;
+  ariaLabelPrevYear?: string;
+  ariaLabelNextYear?: string;
 }
 
 export interface IAngularMyDpOptions extends IMyOptions { }

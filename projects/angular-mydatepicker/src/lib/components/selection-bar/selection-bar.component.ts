@@ -16,9 +16,13 @@ export class SelectionBarComponent implements OnChanges {
   @Input() selectYear: boolean;
   @Input() prevViewDisabled: boolean;
   @Input() nextViewDisabled: boolean;
+  @Input() showYearSelection: boolean = true;
+  @Input() showMonthSelection: boolean = true;
 
-  @Output() prevNavigateBtnClicked: EventEmitter<void> = new EventEmitter<void>();
-  @Output() nextNavigateBtnClicked: EventEmitter<void> = new EventEmitter<void>();
+  @Output() prevMonthNavigateBtnClicked: EventEmitter<void> = new EventEmitter<void>();
+  @Output() nextMonthNavigateBtnClicked: EventEmitter<void> = new EventEmitter<void>();
+  @Output() prevYearNavigateBtnClicked: EventEmitter<void> = new EventEmitter<void>();
+  @Output() nextYearNavigateBtnClicked: EventEmitter<void> = new EventEmitter<void>();
   @Output() monthViewBtnClicked: EventEmitter<void> = new EventEmitter<void>();
   @Output() yearViewBtnClicked: EventEmitter<void> = new EventEmitter<void>();
 
@@ -48,14 +52,24 @@ export class SelectionBarComponent implements OnChanges {
     }
   }
 
-  onPrevNavigateBtnClicked(event: any): void {
+  onPrevMonthNavigateBtnClicked(event: any): void {
     event.stopPropagation();
-    this.opts.rtl ? this.nextNavigateBtnClicked.emit() : this.prevNavigateBtnClicked.emit();
+    this.opts.rtl ? this.nextMonthNavigateBtnClicked.emit() : this.prevMonthNavigateBtnClicked.emit();
   }
 
-  onNextNavigateBtnClicked(event: any): void {
+  onNextMonthNavigateBtnClicked(event: any): void {
     event.stopPropagation();
-    this.opts.rtl ? this.prevNavigateBtnClicked.emit() : this.nextNavigateBtnClicked.emit();
+    this.opts.rtl ? this.prevMonthNavigateBtnClicked.emit() : this.nextMonthNavigateBtnClicked.emit();
+  }
+
+  onPrevYearNavigateBtnClicked(event: any): void {
+    event.stopPropagation();
+    this.opts.rtl ? this.nextYearNavigateBtnClicked.emit() : this.prevYearNavigateBtnClicked.emit();
+  }
+
+  onNextYearNavigateBtnClicked(event: any): void {
+    event.stopPropagation();
+    this.opts.rtl ? this.prevYearNavigateBtnClicked.emit() : this.nextYearNavigateBtnClicked.emit();
   }
 
   onMonthViewBtnClicked(event: any): void {

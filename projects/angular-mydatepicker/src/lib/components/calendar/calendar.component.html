@@ -8,7 +8,9 @@
 
     <lib-selection-bar [opts]="opts" [yearsDuration]="yearsDuration" [visibleMonth]="visibleMonth" [selectMonth]="selectMonth" [selectYear]="selectYear"
                     [prevViewDisabled]="prevViewDisabled" [nextViewDisabled]="nextViewDisabled"
-                    (prevNavigateBtnClicked)="onPrevNavigateBtnClicked()" (nextNavigateBtnClicked)="onNextNavigateBtnClicked()"
+                    [showMonthSelection]="showMonthSelection" [showYearSelection]="showYearSelection"
+                    (prevMonthNavigateBtnClicked)="onPrevMonthNavigateBtnClicked()" (nextMonthNavigateBtnClicked)="onNextMonthNavigateBtnClicked()"
+                    (prevYearNavigateBtnClicked)="onPrevYearNavigateBtnClicked()" (nextYearNavigateBtnClicked)="onNextYearNavigateBtnClicked()"
                     (monthViewBtnClicked)="onMonthViewBtnClicked()" (yearViewBtnClicked)="onYearViewBtnClicked()"></lib-selection-bar>
 
     <lib-day-view *ngIf="!selectMonth && !selectYear" [opts]="opts" [dates]="dates" [weekDays]="weekDays"

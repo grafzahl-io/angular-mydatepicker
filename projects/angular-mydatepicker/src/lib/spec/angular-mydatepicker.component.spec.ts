@@ -2560,6 +2560,40 @@ describe('AngularMyDatePickerComponent', () => {
     comp.closeCalendar();
   });
 
+  it('options - ariaLabelPrevYear', () => {
+    comp.setDefaultMonth('2019/10');
+    let opts: IMyOptions = {
+      ariaLabelPrevYear: 'aria-label prev year'
+    };
+
+    comp.parseOptions(opts);
+    comp.openCalendar();
+
+    fixture.detectChanges();
+    let prevmonth = getElement('.myDpPrevBtn .myDpHeaderBtn');
+    expect(prevmonth).not.toBe(null);
+    expect(prevmonth.attributes['aria-label'].textContent).toBe(opts.ariaLabelPrevYear);
+
+    comp.closeCalendar();
+  });
+
+  it('options - ariaLabelNextYear', () => {
+    comp.setDefaultMonth('2019/10');
+    let opts: IMyOptions = {
+      ariaLabelNextYear: 'aria-label next year'
+    };
+
+    comp.parseOptions(opts);
+    comp.openCalendar();
+
+    fixture.detectChanges();
+    let nextmonth = getElement('.myDpNextBtn .myDpHeaderBtn');
+    expect(nextmonth).not.toBe(null);
+    expect(nextmonth.attributes['aria-label'].textContent).toBe(opts.ariaLabelNextYear);
+
+    comp.closeCalendar();
+  });
+
   it('locale attribute', () => {
     comp.setLocale('ja');
     comp.setDefaultMonth('2019/05');

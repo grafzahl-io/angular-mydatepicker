@@ -49,6 +49,8 @@ export class CalendarComponent implements AfterViewInit, OnDestroy {
 
   selectMonth: boolean = false;
   selectYear: boolean = false;
+  showYearSelection: boolean = true;
+  showMonthSelection: boolean = true;
 
   dateChanged: (dm: IMyDateModel, close: boolean) => void;
   calendarViewChanged: (cvc: IMyCalendarViewChanged) => void;
@@ -91,7 +93,7 @@ export class CalendarComponent implements AfterViewInit, OnDestroy {
     this.clickListener();
   }
 
-  initializeComponent(opts: IMyOptions, defaultMonth: string, selectedValue: any, inputValue: string, selectorPos: IMySelectorPosition, dc: (dm: IMyDateModel, close: boolean) => void, cvc: (cvc: IMyCalendarViewChanged) => void, rds: (rds: IMyRangeDateSelection) => void, cbe: () => void): void {
+  initializeComponent(opts: IMyOptions, defaultMonth: string, showMonthSelection: boolean, showYearSelection: boolean, selectedValue: any, inputValue: string, selectorPos: IMySelectorPosition, dc: (dm: IMyDateModel, close: boolean) => void, cvc: (cvc: IMyCalendarViewChanged) => void, rds: (rds: IMyRangeDateSelection) => void, cbe: () => void): void {
     this.opts = opts;
     this.selectorPos = selectorPos;
     
@@ -99,6 +101,8 @@ export class CalendarComponent implements AfterViewInit, OnDestroy {
     this.calendarViewChanged = cvc;
     this.rangeDateSelection = rds;
     this.closedByEsc = cbe;
+    this.showMonthSelection = showMonthSelection;
+    this.showYearSelection = showYearSelection;
 
     const {defaultView, dateRange, firstDayOfWeek, dayLabels} = this.opts;
 
@@ -402,6 +406,22 @@ export class CalendarComponent implements AfterViewInit, OnDestroy {
     else if (this.selectYear) {
       this.generateYears(this.getYearValueByRowAndCol(2, 2) + 25);
     }
+  }
+
+  onPrevMonthNavigateBtnClicked(): void {
+    this.setDateViewMonth(false);
+  }
+
+  onNextMonthNavigateBtnClicked(): void {
+    this.setDateViewMonth(true);
+  }
+
+  onPrevYearNavigateBtnClicked(): void {
+    this.visibleMonth.year--;
+  }
+
+  onNextYearNavigateBtnClicked(): void {
+    this.visibleMonth.year++;
   }
 
   setDateViewMonth(isNext: boolean): void {
