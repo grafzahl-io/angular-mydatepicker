@@ -645,3 +645,25 @@
 * Added 4px padding to calendar. Default height and width of the calendar changed to 266px.
 
 
+# 0.8.2 (2020-05-27)
+
+### Bug Fixes
+
+* none
+
+### Features
+
+* Separated the selector for month and year.
+
+
+# 0.8.3 (2020-05-28)
+
+### Bug Fixes
+
+* Changing year does not update the day-view
+
+### Features
+
+* none
+
+

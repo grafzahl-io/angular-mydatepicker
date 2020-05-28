@@ -418,10 +418,12 @@ export class CalendarComponent implements AfterViewInit, OnDestroy {
 
   onPrevYearNavigateBtnClicked(): void {
     this.visibleMonth.year--;
+    this.setDateViewYear();
   }
 
   onNextYearNavigateBtnClicked(): void {
     this.visibleMonth.year++;
+    this.setDateViewYear();
   }
 
   setDateViewMonth(isNext: boolean): void {
@@ -435,6 +437,21 @@ export class CalendarComponent implements AfterViewInit, OnDestroy {
     const y: number = d.getFullYear();
     const m: number = d.getMonth() + 1;
 
+    this.visibleMonth = {monthTxt: this.opts.monthLabels[m], monthNbr: m, year: y};
+    this.generateCalendar(m, y, true);
+  }
+
+  setDateViewYear(isNext: boolean): void {
+    let change: number = isNext ? 1 : -1;
+
+    const {year, monthNbr} = this.visibleMonth;
+
+    const d: Date = this.getDate(year, monthNbr, 1);
+    d.getFullYear(d.getFullYear() + change);
+
+    const y: number = d.getFullYear();
+    const m: number = d.getMonth() + 1;
+    
     this.visibleMonth = {monthTxt: this.opts.monthLabels[m], monthNbr: m, year: y};
     this.generateCalendar(m, y, true);
   }
