@@ -1,26 +1,34 @@
 <div class="myDpMonthYearSelBar">
   <div class="myDpMonthSelBar" *ngIf="showMonthSelection">
     <div class="myDpPrevBtn">
-      <button type="button" [attr.aria-label]="opts.ariaLabelPrevMonth" class="myDpHeaderBtn myDpIcon myDpIconLeftArrow myDpHeaderBtnEnabled" (click)="onPrevMonthNavigateBtnClicked($event)" tabindex="{{!prevViewDisabled ? '0':'-1'}}"  [disabled]="prevViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': prevViewDisabled}"></button>
+      <button type="button" [attr.aria-label]="opts.ariaLabelPrevMonth" class="myDpHeaderBtn myDpIcon myDpIconLeftArrow myDpHeaderBtnEnabled" (click)="onPrevMonthNavigateBtnClicked($event)" tabindex="{{!prevViewDisabled ? '0':'-1'}}"  [disabled]="prevViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': prevViewDisabled}">
+        <i class="s-ico s-ico--arrow-left-small"></i>
+      </button>
     </div>
     <div class="myDpMonthYearText">
       <button type="button" class="myDpHeaderBtn myDpMonthBtn" (click)="opts.monthSelector && onMonthViewBtnClicked($event)" tabindex="{{opts.monthSelector ? '0':'-1'}}" [ngClass]="{'myDpMonthLabel': opts.monthSelector, 'myDpHeaderLabelBtnNotEdit': !opts.monthSelector}">{{visibleMonth.monthTxt}}</button>
     </div>
     <div class="myDpNextBtn">
-      <button type="button" [attr.aria-label]="opts.ariaLabelNextMonth" class="myDpHeaderBtn myDpIcon myDpIconRightArrow myDpHeaderBtnEnabled" (click)="onNextMonthNavigateBtnClicked($event)" tabindex="{{!nextViewDisabled ? '0':'-1'}}" [disabled]="nextViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': nextViewDisabled}"></button>
+      <button type="button" [attr.aria-label]="opts.ariaLabelNextMonth" class="myDpHeaderBtn myDpIcon myDpIconRightArrow myDpHeaderBtnEnabled" (click)="onNextMonthNavigateBtnClicked($event)" tabindex="{{!nextViewDisabled ? '0':'-1'}}" [disabled]="nextViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': nextViewDisabled}">
+        <i class="s-ico s-ico--arrow-right-small"></i>
+      </button>
     </div>
   </div>
 
 
   <div class="myDpYearSelBar" *ngIf="showYearSelection">
     <div class="myDpPrevBtn">
-      <button type="button" [attr.aria-label]="opts.ariaLabelPrevYear" class="myDpHeaderBtn myDpIcon myDpIconLeftArrow myDpHeaderBtnEnabled" (click)="onPrevYearNavigateBtnClicked($event)" tabindex="{{!prevViewDisabled ? '0':'-1'}}"  [disabled]="prevViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': prevViewDisabled}"></button>
+      <button type="button" [attr.aria-label]="opts.ariaLabelPrevYear" class="myDpHeaderBtn myDpIcon myDpIconLeftArrow myDpHeaderBtnEnabled" (click)="onPrevYearNavigateBtnClicked($event)" tabindex="{{!prevViewDisabled ? '0':'-1'}}"  [disabled]="prevViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': prevViewDisabled}">
+        <i class="s-ico s-ico--arrow-left-small"></i>
+      </button>
     </div>
     <div class="myDpMonthYearText">
       <button type="button" class="myDpHeaderBtn myDpYearBtn" (click)="opts.yearSelector && onYearViewBtnClicked($event)" tabindex="{{opts.yearSelector ? '0':'-1'}}" [ngClass]="{'myDpYearLabel': opts.yearSelector, 'myDpHeaderLabelBtnNotEdit': !opts.yearSelector}">{{visibleMonth.year}}</button>
     </div>
     <div class="myDpNextBtn">
-      <button type="button" [attr.aria-label]="opts.ariaLabelNextYear" class="myDpHeaderBtn myDpIcon myDpIconRightArrow myDpHeaderBtnEnabled" (click)="onNextYearNavigateBtnClicked($event)" tabindex="{{!nextViewDisabled ? '0':'-1'}}" [disabled]="nextViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': nextViewDisabled}"></button>
+      <button type="button" [attr.aria-label]="opts.ariaLabelNextYear" class="myDpHeaderBtn myDpIcon myDpIconRightArrow myDpHeaderBtnEnabled" (click)="onNextYearNavigateBtnClicked($event)" tabindex="{{!nextViewDisabled ? '0':'-1'}}" [disabled]="nextViewDisabled" [ngClass]="{'myDpHeaderBtnDisabled': nextViewDisabled}">
+        <i class="s-ico s-ico--arrow-right-small"></i>
+      </button>
     </div>
   </div>
 </div>

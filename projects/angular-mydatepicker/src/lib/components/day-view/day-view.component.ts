@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, ViewEncapsulation, SimpleChanges} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, Output, ViewEncapsulation, SimpleChanges } from "@angular/core";
 import {IMyCalendarDay} from "../../interfaces/my-calendar-day.interface";
 import {IMyDate} from "../../interfaces/my-date.interface";
 import {IMyDateRange} from "../../interfaces/my-date-range.interface";
@@ -10,6 +10,7 @@ import {MonthId} from "../../enums/month-id.enum";
 import {OPTS, DATES, WEEK_DAYS, SELECTED_DATE, SELECTED_DATE_RANGE} from "../../constants/constants";
 
 @Component({
+  host: {'class': 'datepicker-day-table-container'},
   selector: "lib-day-view",
   templateUrl: "./day-view.component.html",
   providers: [UtilService],
