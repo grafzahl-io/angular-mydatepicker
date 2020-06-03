@@ -667,3 +667,8 @@
 * none
 
 
+# 0.8.4 (2020-06-03)
+
+### Bug Fixes
+
+* Remove wildcard styles to be able to style it from outside
