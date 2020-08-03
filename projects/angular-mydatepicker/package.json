@@ -1,6 +1,6 @@
 {
   "name": "angular-mydatepicker-extra",
-  "version": "0.8.4",
+  "version": "0.8.6",
   "description": "Angular datepicker and date range picker based on https://kekeh.github.io/angular-mydatepicker/ - extended with some features.",
   "homepage": "https://github.com/grafzahl-io/angular-mydatepicker",
   "keywords": [

@@ -672,3 +672,17 @@
 ### Bug Fixes
 
 * Remove wildcard styles to be able to style it from outside
+
+
+# 0.8.5 (2020-06-03)
+
+### Bug Fixes
+
+* Remove all styles to be able to define custom styles on all elements
+
+
+# 0.8.6 (2020-06-03)
+
+### Bug Fixes
+
+* Remove height and width selector predefined px to be able to scale to 100%
